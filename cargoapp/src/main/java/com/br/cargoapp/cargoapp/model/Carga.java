@@ -20,6 +20,7 @@ public class Carga {
     private Long id;
     private double altura;
     private double largura;
+    private double comprimento;
     private double peso;
     private boolean inventario;
     private TipoCarga tipoCarga;
