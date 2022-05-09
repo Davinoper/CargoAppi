@@ -1,6 +1,8 @@
 package com.br.cargoapp.cargoapp.controller;
 
 import com.br.cargoapp.cargoapp.model.Pessoa;
+import com.br.cargoapp.cargoapp.model.PessoaFisica;
+import com.br.cargoapp.cargoapp.model.PessoaJuridica;
 import com.br.cargoapp.cargoapp.model.dto.pessoa.CreatePessoaDto;
 import com.br.cargoapp.cargoapp.service.PessoaService;
 import lombok.extern.log4j.Log4j2;
@@ -32,6 +34,20 @@ public class PessoaController {
     public ResponseEntity<List<Pessoa>> findAll(){
         log.info("PessoaController.findAll");
         List<Pessoa> lista = pessoaService.findAll();
+        return new ResponseEntity<>(lista,HttpStatus.OK);
+    }
+
+    @GetMapping("/pessoafisica")
+    public ResponseEntity<List<PessoaFisica>> findAllPessoaFisica(){
+        log.info("PessoaController.findAllPessoaFisica");
+        List<PessoaFisica> lista = pessoaService.findAllPessoaFisica();
+        return new ResponseEntity<>(lista,HttpStatus.OK);
+    }
+
+    @GetMapping("/pessoajuridica")
+    public ResponseEntity<List<PessoaJuridica>> findAllJuridica(){
+        log.info("PessoaController.findAllJuridica");
+        List<PessoaJuridica> lista = pessoaService.findAllPessoaJuridica();
         return new ResponseEntity<>(lista,HttpStatus.OK);
     }
 

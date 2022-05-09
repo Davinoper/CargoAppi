@@ -49,6 +49,16 @@ public class PessoaService {
 
     }
 
+    public List<PessoaFisica> findAllPessoaFisica(){
+        log.info("PessoaService.findAllPessoaFisica");
+        return pessoaRepository.findAllPessoaFisica();
+    }
+
+    public List<PessoaJuridica> findAllPessoaJuridica(){
+        log.info("PessoaService.findAllPessoaJuridica");
+        return pessoaRepository.findAllPessoaJuridica();
+    }
+
     public List<Pessoa> findAll(){
         log.info("PessoaService.findAll");
         return pessoaRepository.findAll();
